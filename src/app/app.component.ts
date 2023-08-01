@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PrimeNgAstro';
+  dialogVisible = false;
+  options = [
+    {
+      name: 'Test',
+    },
+    {
+      name: 'Test2'
+    },
+    {
+      name: 'Test3'
+    }
+  ]
 }

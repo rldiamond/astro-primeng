@@ -1,5 +1,6 @@
 // astro dark theme
 :root {
+  // -- Colors --
   // Background Colors
   --color-background-base-default: #101923;
   --color-background-base-header: #172635;
@@ -52,6 +53,53 @@
   --color-data-visualization-6: #92cbff;
   --color-data-visualization-7: #a1e9eb;
   --color-data-visualization-8: #b7dcff;
+
+  // -- Default sizing and widths --
+  --border-width-xs: 1px;
+  --radius-base: 3px;
+
+  // Default shadows
+  --shadow-default: 0px 4px 8px 0px rgba(0, 0, 0, 0.45);
+
+  // -- Components --
+  // Button
+  --button-border-width: var(--border-width-xs);
+  --button-color-background-borderless: #ffffff00;
+  --button-color-background-primary-default: var(--color-background-interactive-default);
+  --button-color-background-primary-hover: var(--color-background-interactive-hover);
+  --button-color-background-secondary: #ffffff00;
+  --button-color-border-borderless: var(--button-color-background-borderless);
+  --button-color-border-primary-default: var(--button-color-background-primary-default);
+  --button-color-border-primary-hover: var(--button-color-background-primary-hover);
+  --button-color-border-secondary-default: var(--color-border-interactive-default);
+  --button-color-border-secondary-hover: var(--color-border-interactive-hover);
+  --button-color-text-borderless-default: var(--color-text-interactive-default);
+  --button-color-text-borderless-hover: var(--color-text-interactive-hover);
+  --button-color-text-primary: var(--color-text-inverse);
+  --button-color-text-secondary-default: var(--color-text-interactive-default);
+  --button-color-text-secondary-hover: var(--color-text-interactive-hover);
+  --button-icon-color-fill-borderless-default: var(--button-color-text-borderless-default);
+  --button-icon-color-fill-borderless-hover: var(--button-color-text-borderless-hover);
+  --button-icon-color-fill-primary: var(--button-color-text-primary);
+  --button-icon-color-fill-secondary-default: var(--button-color-border-secondary-default);
+  --button-icon-color-fill-secondary-hover: var(--button-icon-color-fill-secondary-hover);
+  --button-radius: var(--radius-base);
+
+  // Input
+  --input-border-width: var(--border-width-xs);
+  --input-color-background-default: var(--color-background-base-default);
+  --input-color-border-default: var(--color-border-interactive-muted);
+  --input-color-border-hover: var(--color-border-interactive-hover);
+  --input-color-border-invalid: var(--color-border-error);
+  --input-color-text-default: var(--color-text-primary);
+  --input-color-text-placeholder: var(--color-text-placeholder);
+  --input-icon-color-fill-default: var(--color-background-interactive-default);
+  --input-radius: var(--radius-base);
+
+  // Tooltip
+  --tooltip-color-background: #3c3e42;
+  --tooltip-color-text: var(--color-text-white);
+  --tooltip-radius: 1px;
 }
 
 .astro {
@@ -62,14 +110,225 @@
 /************************************
 PRIMENG Form Components
 ************************************/
+// InputText
+.astro .p-inputtext {
+  background-color: var(--input-color-background-default);
+  border: var(--input-border-width) solid var(--input-color-border-default);
+  color: var(--input-color-text-default);
+  border-radius: var(--input-radius);
+
+}
+
+.astro .p-inputtext:enabled:hover {
+  border: var(--input-border-width) solid var(--input-color-border-hover);
+}
+
+.astro .p-inputtext:enabled:focus {
+  border: var(--input-border-width) solid var(--input-color-border-hover);
+  box-shadow: 0 0 0 0;
+}
+
+.astro .p-inputtext:enabled::placeholder {
+  color: var(--input-color-text-placeholder);
+}
+
+.astro .p-inputtext.invalid {
+  border: var(--input-border-width) solid var(--input-color-border-invalid);
+}
+
+.astro .p-input-icon-left > .p-icon-wrapper.p-icon, .p-input-icon-left > i:first-of-type {
+  color: var(--input-icon-color-fill-default);
+}
+
+// Listbox
+.astro .p-listbox {
+  background: var(--color-background-surface-default);
+  border: var(--input-border-width) solid var(--input-color-border-default);
+  border-radius: var(--input-radius);
+}
+
+.astro .p-listbox .p-listbox-header {
+  background: var(--color-background-surface-default);
+  border: 0;
+}
+.astro .p-listbox .p-listbox-header .p-listbox-filter-icon {
+  color: var(--input-icon-color-fill-default);
+}
+
+.astro .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled) {
+  color: var(--input-color-text-default);
+}
+
+.astro .p-listbox .p-listbox-list .p-listbox-item.p-highlight {
+  background-color: var(--color-background-surface-selected);
+  color: var(--color-text-primary);
+  border: var(--input-border-width) solid var(--color-border-interactive-default);
+  box-shadow: 0 0 0 0;
+}
+
+.astro .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
+  background: var(--color-background-surface-hover);
+}
+
+/************************************
+PRIMENG Button Components
+************************************/
+// Button (primary)
+.astro .p-button {
+  background: var(--button-color-background-primary-default);
+  border: var(--button-border-width) solid var(--button-color-border-primary-default);
+  border-radius: var(--button-radius);
+  color: var(--button-color-text-primary);
+}
+
+.astro .p-button .pi, .fa {
+  color: var(--button-icon-color-fill-primary);
+}
+
+.astro .p-button:hover {
+  background: var(--button-color-background-primary-hover);
+  border: var(--button-border-width) solid var(--button-color-border-primary-hover);
+  border-radius: var(--button-radius);
+  color: var(--button-color-text-primary);
+}
+
+.astro .p-button:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.astro .p-button .p-button-label {
+  font-weight: normal;
+}
+
+.astro .p-button .p-button-label:hover {
+  font-weight: normal;
+}
+
+// Button (secondary)
+.astro .p-button-secondary .p-button {
+  background: var(--button-color-background-secondary);
+  border: var(--button-border-width) solid var(--button-color-border-secondary-default);
+  border-radius: var(--button-radius);
+  color: var(--button-color-text-secondary-default);
+}
+
+.astro .p-button-secondary .p-button  .pi, .fa {
+  color: var(--button-icon-color-fill-secondary-default);
+}
+
+.astro .p-button-secondary .p-button  .pi, .fa :hover {
+  color: var(--button-icon-color-fill-secondary-hover);
+}
+
+.astro .p-button-secondary .p-button:hover {
+  background: var(--button-color-background-secondary);
+  border: var(--button-border-width) solid var(--button-color-border-secondary-hover);
+  border-radius: var(--button-radius);
+  color: var(--button-color-text-secondary-hover);
+}
+
+.astro .p-button-secondary .p-button:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.astro .p-button-secondary .p-button .p-button-label {
+  font-weight: normal;
+}
+
+.astro .p-button-secondary .p-button .p-button-label:hover {
+  font-weight: normal;
+}
+
 
 /************************************
 PRIMENG Panel Components
 ************************************/
 // Card
 .astro .p-card {
-  background-color: var(--color-background-base-default);
+  background-color: var(--color-background-surface-default);
   color: var(--color-text-primary);
   border-color: var(--color-border-default);
 }
 
+/************************************
+PRIMENG Overlay Components
+************************************/
+// Dialog
+.astro .sm .p-dialog {
+  width: 300px;
+}
+.astro .md .p-dialog {
+  width: 500px;
+}
+.astro .lg .p-dialog {
+  width: 700px;
+}
+.astro .xl .p-dialog {
+  width: 900px;
+}
+.astro .xxl .p-dialog {
+  width: 1100px;
+}
+.astro .p-dialog {
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-default);
+}
+.astro .p-dialog .p-dialog-header {
+  background: var(--color-background-surface-header);
+  color: var(--color-text-primary);
+  border-top-right-radius: var(--radius-base);
+  border-top-left-radius: var(--radius-base);
+}
+
+.astro .p-dialog .p-dialog-header .p-dialog-header-icon:enabled {
+  color: var(--color-text-secondary);
+}
+
+.astro .p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  background: transparent;
+}
+
+.astro .p-dialog .p-dialog-content {
+  background: var(--color-background-surface-default);
+  color: var(--color-text-primary);
+}
+.astro .p-dialog .p-dialog-footer {
+  background: var(--color-background-surface-default);
+  color: var(--color-text-primary);
+  border-bottom-right-radius: var(--radius-base);
+  border-bottom-left-radius: var(--radius-base);
+}
+
+// OverlayPanel
+.astro.p-overlaypanel {
+  &:before {
+    content: none;
+  }
+
+  &:after {
+    content: none;
+  }
+
+  margin-top: 1px;
+  background-color: var(--color-background-base-default);
+  color: var(--color-text-primary);
+  border: var(--border-width-xs) solid var(--color-border-default);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-default);
+}
+
+.astro .p-overlaypanel-content {
+  padding: 10px;
+}
+
+// Tooltip
+.astro.p-tooltip {
+  background: transparent;
+}
+.astro.p-tooltip .p-tooltip-text {
+  background: var(--tooltip-color-background);
+  color: var(--tooltip-color-text);
+  border-radius: 0;
+  padding: 5px;
+  font-size: 0.9em;
+}
