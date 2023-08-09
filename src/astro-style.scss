@@ -100,6 +100,34 @@
   --tooltip-color-background: #3c3e42;
   --tooltip-color-text: var(--color-text-white);
   --tooltip-radius: 1px;
+
+  // Notification Banner
+  --notification-banner-color-border-inner-caution: var(--color-status-caution);
+  --notification-banner-color-border-inner-critical: var(--color-status-critical);
+  --notification-banner-color-border-inner-default: var(--color-border-interactive-default);
+  --notification-banner-color-border-inner-normal: var(--color-status-normal);
+  --notification-banner-color-border-inner-off: var(--color-status-off);
+  --notification-banner-color-border-inner-serious: var(--color-status-serious);
+  --notification-banner-color-border-inner-standby: var(--color-status-standby);
+  --notification-banner-color-border-outer-caution: var(--color-status-caution);
+  --notification-banner-color-border-outer-critical: var(--color-status-critical);
+  --notification-banner-color-border-outer-default: var(--color-border-interactive-default);
+  --notification-banner-color-border-outer-normal: var(--color-status-normal);
+  --notification-banner-color-border-outer-off: var(--color-status-off);
+  --notification-banner-color-border-outer-serious: var(--color-status-serious);
+  --notification-banner-color-border-outer-standby: var(--color-status-standby);
+  --notification-banner-radius-inner: 2px;
+  --notification-banner-radius-outer: var(--radius-base);
+
+  // Table
+  --table-header-color-background: var(--color-background-surface-header);
+  --table-header-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.45);
+  --table-row-color-background-default: var(--color-background-surface-default);
+  --table-row-color-background-selected: var(--color-background-surface-selected);
+  --table-row-color-background-hover: var(--color-background-surface-hover);
+  --table-row-color-text: var(--color-text-primary);
+  --table-row-color-border: var(--color-background-base-default);
+  --table-row-border-width: var(--border-width-xs);
 }
 
 .astro {
@@ -331,4 +359,165 @@ PRIMENG Overlay Components
   border-radius: 0;
   padding: 5px;
   font-size: 0.9em;
+}
+
+// Messages
+.astro .p-message {
+  background: var(--color-background-base-default);
+  border: 2px solid;
+  border-left: 10px solid;
+  border-radius: var(--notification-banner-radius-outer);
+  border-color: var(--notification-banner-color-border-outer-default);
+  color: var(--color-text-primary);
+}
+
+.astro .p-message .p-message-icon {
+  color: var(--color-text-primary);
+}
+
+.astro .p-message .p-message-close {
+  color: var(--button-color-background-primary-default);
+}
+
+.astro .p-message .p-message-close:hover {
+  color: var(--button-color-background-primary-hover);
+  background: transparent;
+}
+
+.astro .p-message.p-message-success {
+  border-color: var(--notification-banner-color-border-outer-normal);
+}
+
+.astro .p-message.p-message-warn {
+  border-color: var(--notification-banner-color-border-outer-serious);
+}
+
+.astro .p-message.p-message-error {
+  border-color: var(--notification-banner-color-border-outer-critical);
+}
+
+// Toast
+.astro .p-toast .p-toast-message {
+  color: var(--color-text-primary);
+  background-color: var(--color-background-base-default);
+  border-radius: var(--notification-banner-radius-outer);
+  border: var(--border-width-xs) solid var(--notification-banner-color-border-outer-default);
+  border-left: 5px solid var(--notification-banner-color-border-outer-default);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
+  color: var(--color-text-primary);
+}
+
+.astro .p-toast .p-toast-message .p-toast-icon-close {
+  color: var(--button-color-background-primary-default);
+}
+
+.astro .p-toast .p-toast-message .p-toast-icon-close:hover {
+  color: var(--button-color-background-primary-hover);
+  background: transparent;
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-success, {
+  border-color: var(--notification-banner-color-border-outer-normal);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
+   color: var(--notification-banner-color-border-outer-normal);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-warn, {
+  border-color: var(--notification-banner-color-border-outer-serious);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
+   color: var(--notification-banner-color-border-outer-serious);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-error, {
+  border-color: var(--notification-banner-color-border-outer-critical);
+}
+
+.astro .p-toast .p-toast-message.p-toast-message-error .p-toast-message-error {
+   color: var(--notification-banner-color-border-outer-critical);
+}
+
+// Tabview
+.astro .p-tabview {
+  border: var(--border-width-xs) solid var(--color-border-default);
+}
+.astro .p-tabview .p-tabview-panels {
+  background: var(--color-background-surface-default);
+  color: var(--color-text-primary);
+}
+
+.astro .p-tabview .p-tabview-nav {
+  background: var(--color-background-surface-header);
+  border: unset;
+}
+
+.astro .p-tabview .p-tabview-nav .p-tabview-nav-link {
+  color: var(--color-text-interactive-default);
+  background: transparent;
+  border: 0;
+}
+.astro .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: unset;
+}
+
+.astro .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link:hover {
+  color: var(--color-text-interactive-hover);
+  background: transparent;
+}
+
+.astro .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: transparent;
+  border-bottom: 5px solid var(--color-border-interactive-default);
+  color: var(--color-text-primary);
+}
+
+// Table
+.astro .p-datatable .p-datatable-thead > tr > th {
+  background: var(--table-header-color-background);
+  color: var(--table-row-color-text);
+  border-bottom: var(--table-row-border-width) solid var(--color-border-default);
+}
+
+.astro .p-datatable .p-datatable-tbody > tr {
+  background: var(--table-row-color-background-default);
+  color: var(--table-row-color-text);
+}
+
+.astro .p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--table-row-color-background-hover);
+  color: var(--table-row-color-text);
+}
+
+.astro .p-datatable .p-datatable-tbody > tr > td {
+  border-bottom: var(--table-row-border-width) solid var(--table-row-color-border);
+}
+
+.astro .p-datatable.p-datatable-hoverable-rows .p-datatable-tbody > tr:not(.p-highlight):hover {
+  background: var(--table-row-color-background-hover);
+  color: var(--table-row-color-text);
+}
+
+.astro .p-datatable .p-datatable-tbody > tr:focus {
+  background: var(--table-row-color-background-selected);
+  color: var(--table-row-color-text);
+  outline: unset;
+}
+
+.astro .p-datatable .p-sortable-column:not(.p-highlight):hover {
+  background: var(--table-header-color-background);
+  color: var(--color-text-interactive-hover);
+}
+
+.astro .p-datatable .p-sortable-column.p-highlight:hover {
+  background: var(--table-header-color-background);
+  color: var(--color-text-interactive-hover);
+}
+
+.astro .p-datatable .p-sortable-column:focus {
+  box-shadow: unset;
 }

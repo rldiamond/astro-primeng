@@ -10,6 +10,10 @@ import {OverlayPanelModule} from "primeng/overlaypanel";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DialogModule} from "primeng/dialog";
 import {TooltipModule} from "primeng/tooltip";
+import {MessagesModule} from "primeng/messages";
+import {ToastModule} from "primeng/toast";
+import {TabViewModule} from "primeng/tabview";
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {TooltipModule} from "primeng/tooltip";
     OverlayPanelModule,
     BrowserAnimationsModule,
     DialogModule,
-    TooltipModule
+    TooltipModule,
+    MessagesModule,
+    ToastModule,
+    TabViewModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
