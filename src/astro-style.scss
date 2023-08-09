@@ -477,6 +477,9 @@ PRIMENG Overlay Components
 }
 
 // Table
+.astro .p-datatable {
+  border: var(--border-width-xs) solid var(--color-border-default);
+}
 .astro .p-datatable .p-datatable-thead > tr > th {
   background: var(--table-header-color-background);
   color: var(--table-row-color-text);
