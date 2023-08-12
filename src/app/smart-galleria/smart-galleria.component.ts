@@ -16,6 +16,8 @@ import {MenuItem} from "primeng/api";
   encapsulation: ViewEncapsulation.None,
 })
 export class SmartGalleriaComponent implements OnInit {
+  // TODO: Use ng-lazyload-image to lazy load the images with the asnyc url
+  //   Implement download capabilities
 
   @Input() thumbnail: Image | undefined;
   @Input() images: Image[] = [];
