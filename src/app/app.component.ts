@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Message, MessageService} from "primeng/api";
+import {Image} from "./smart-galleria/smart-galleria.component";
 
 @Component({
   selector: 'app-root',
@@ -8,64 +9,19 @@ import {Message, MessageService} from "primeng/api";
   providers: [MessageService]
 })
 export class AppComponent {
-  title = 'PrimeNgAstro';
-  dialogVisible = false;
-  options = [
-    {
-      name: 'Test',
-    },
-    {
-      name: 'Test2'
-    },
-    {
-      name: 'Test3'
-    }
-  ]
-  messages: Message[] = [
-    {severity: 'info', summary: 'Success', detail: 'Message Content', sticky: true},
-    {severity: 'success', summary: 'Success', detail: 'Message Content', sticky: true},
-    {severity: 'warn', summary: 'Success', detail: 'Message Content', sticky: true},
-    {severity: 'error', summary: 'Success', detail: 'Message Content', sticky: true},
-  ];
-  selection: any;
 
-  products = [
-    {
-      code: 'abc123',
-      name: 'Watch',
-      category: 'Accessories',
-      quantity: 25
-    },
-    {
-      code: 'abc123',
-      name: 'Watch',
-      category: 'Accessories',
-      quantity: 25
-    },
-    {
-      code: 'abc123',
-      name: 'Watch',
-      category: 'Accessories',
-      quantity: 25
-    },
-    {
-      code: 'abc123',
-      name: 'Watch',
-      category: 'Accessories',
-      quantity: 25
-    },
-    {
-      code: 'abc123',
-      name: 'Watch',
-      category: 'Accessories',
-      quantity: 25
-    },
-  ]
+  thumbnail: Image;
+  images: Image[];
 
   constructor(private messageService: MessageService) {
+    this.thumbnail = {src: 'assets/dog-thumbnail.png'};
+    this.images = [
+      {src: 'assets/dog-large.png'},
+      {src: 'assets/flowers-276014_640.jpg'},
+      {src: 'assets/istockphoto-1146517111-612x612.jpg'},
+      {src: 'assets/OIG.jpg'},
+      {src: 'assets/pexels-pixabay-268533.jpg'},
+    ];
   }
 
-  showMessage() {
-    this.messages.forEach(m => this.messageService.add(m));
-  }
 }

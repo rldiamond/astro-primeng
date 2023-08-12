@@ -1,0 +1,170 @@
+.thumbnail-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.thumbnail-img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.thumbnail-overlay {
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  padding: 0.5rem;
+  align-items: center;
+  display: inline-grid;
+  justify-items: center;
+  cursor: default;
+  border-top-left-radius: 10px;
+}
+
+
+.thumbnail-hover-overlay {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  align-items: center;
+  display: inline-grid;
+  justify-items: center;
+  cursor: default;
+  transition: .5s ease;
+}
+
+.thumbnail-hover-overlay .pi {
+  font-size: 2.5rem;
+}
+
+.thumbnail-hover-overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.galleria-dialog .p-dialog {
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.galleria-dialog .p-dialog .p-dialog-content {
+  background: var(--gallery-color-background-default);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.8px);
+  -webkit-backdrop-filter: blur(10.8px);
+  border: 1px solid var(--gallery-color-border-default);
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: unset;
+  padding: unset;
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.controls.left {
+  margin-left: auto;
+}
+
+.controls .pi {
+  font-size: 1.5rem;
+}
+
+.controls .pi.disabled {
+  color: var(--color-border-default);
+  cursor: not-allowed;
+}
+
+.controls .pi.disabled:hover {
+  color: var(--color-border-default);
+  cursor: not-allowed;
+}
+
+.controls .pi:hover {
+  cursor: pointer;
+  color: var(--color-text-interactive-hover);
+}
+
+.large-image {
+  transition: .3s ease;
+  z-index: 0;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 3.1rem - 300px);
+}
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: auto;
+  height: 100%;
+}
+
+.carousel img {
+  max-width: 256px;
+  max-height: 256px;
+  box-shadow: var(--shadow-default);
+}
+
+.carousel img.displayed {
+  border: 2px solid var(--color-border-interactive-default);
+}
+
+.carousel-wrapper {
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.carousel-wrapper i {
+  font-size: 2rem;
+}
+
+.carousel-wrapper i:hover {
+  cursor: pointer;
+  color: var(--color-text-interactive-hover);
+}

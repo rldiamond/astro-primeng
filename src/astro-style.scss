@@ -128,6 +128,14 @@
   --table-row-color-text: var(--color-text-primary);
   --table-row-color-border: var(--color-background-base-default);
   --table-row-border-width: var(--border-width-xs);
+
+  // Switch
+  --switch-radius-track: 10px;
+
+  // Galeria
+  --gallery-color-background-default: #1b2d3e80;
+  --gallery-color-background-carousel: #1b2d3e85;
+  --gallery-color-border-default: #2b659b30;
 }
 
 .astro {
@@ -523,4 +531,57 @@ PRIMENG Overlay Components
 
 .astro .p-datatable .p-sortable-column:focus {
   box-shadow: unset;
+}
+
+// Menu
+.astro .p-menu {
+  background: var(--color-background-interactive-default-default);
+  border: var(--input-border-width) solid var(--input-color-border-default);
+  border-radius: var(--input-radius);
+  padding: unset;
+}
+
+.astro .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  color: var(--color-text-primary);
+}
+
+.astro .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link {
+  color: var(--color-text-primary);
+}
+
+.astro .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover .p-menuitem-link .p-menuitem-text {
+  color: var(--color-text-primary);
+}
+
+.astro .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+  background: var(--color-background-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.astro .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+  background: var(--color-background-surface-selected);
+}
+
+.astro .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  color: var(--color-text-primary);
+}
+
+// Switch
+.astro .p-inputswitch {
+  height: 0.75rem;
+  width: 3rem;
+}
+
+.astro .p-inputswitch-slider {
+  background: var(--input-color-background-default);
+  border: var(--input-border-width) solid var(--input-color-border-default);
+}
+
+.astro .p-inputswitch:not(.p-disabled):hover .p-inputswitch-slider {
+  background: var(--input-color-background-default);
+
+}
+
+.astro .p-inputswitch-slider .p-focus{
+  background: var(--input-icon-color-fill-default);
 }

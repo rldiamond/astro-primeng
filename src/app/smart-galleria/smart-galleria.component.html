@@ -1,0 +1,49 @@
+<div class="thumbnail-wrapper" (click)="showDialog()">
+  <img [src]="thumbnail ? thumbnail.src : ''" class="thumbnail-img"
+       [style]="{'max-height': thumbnailMaxHeight, 'max-width': thumbnailMaxWidth}">
+  <div class="overlay thumbnail-overlay" [pTooltip]="images.length + ' image' + (images.length === 1 ? '' : 's')"
+       tooltipStyleClass="astro">
+    1
+  </div>
+  <div class="overlay thumbnail-hover-overlay"><i class="pi pi-eye"></i></div>
+</div>
+
+<p-dialog *ngIf="load" class="galleria-dialog" [(visible)]="visible" [showHeader]="false" [modal]="true">
+  <div class="controls-wrapper">
+    <div class="controls">
+      <i class="pi pi-download" pTooltip="Download" tooltipStyleClass="astro" tooltipPosition="bottom"></i>
+    </div>
+    <div class="controls left">
+      <i class="pi pi-image" (click)="resetRotation(); resetZoom()" pTooltip="Reset image" tooltipPosition="bottom"
+         tooltipStyleClass="astro"></i>
+      <i class="pi pi-undo" style="transform: scaleX(-1)" (click)="rotateRight()" pTooltip="Rotate right"
+         tooltipStyleClass="astro" tooltipPosition="bottom"></i>
+      <i class="pi pi-undo" (click)="rotateLeft()" pTooltip="Rotate left" tooltipStyleClass="astro"
+         tooltipPosition="bottom"></i>
+      <i class="pi pi-search-minus" (click)="zoomOut()" [ngClass]="zoomLevel <= minimumZoomLevel ? 'disabled' : ''"
+         pTooltip="Zoom in" tooltipStyleClass="astro" tooltipPosition="bottom"></i>
+      <i class="pi pi-search-plus" (click)="zoomIn()" [ngClass]="zoomLevel >= maximumZoomLevel ? 'disabled' : ''"
+         pTooltip="Zoom out" tooltipStyleClass="astro" tooltipPosition="bottom"></i>
+      <i class="pi pi-times" style="margin-left: 20px;" pTooltip="Close" tooltipStyleClass="astro"
+         (click)="visible = false"></i>
+    </div>
+  </div>
+
+  <div class="image-wrapper">
+    <img #displayedImg [src]="displayedImage ? displayedImage.src : ''" class="large-image"
+         [style]="{'max-height': zoomLevel + '%', 'max-width': zoomLevel + '%','transform': 'rotate(' + rotation + 'deg)'}"
+         loading="lazy">
+  </div>
+
+
+  <div class="carousel-wrapper">
+    <div #waka class="carousel">
+      <div *ngFor="let image of images" class="thumbnail-wrapper" (click)="setDisplayImage(image)">
+        <img [src]="image.src" [ngClass]="displayedImage === image ? 'displayed' : ''" loading="lazy">
+        <div class="overlay thumbnail-hover-overlay"><i class="pi pi-eye"></i></div>
+      </div>
+    </div>
+  </div>
+
+
+</p-dialog>

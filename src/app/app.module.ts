@@ -14,10 +14,16 @@ import {MessagesModule} from "primeng/messages";
 import {ToastModule} from "primeng/toast";
 import {TabViewModule} from "primeng/tabview";
 import {TableModule} from "primeng/table";
+import {MenuModule} from "primeng/menu";
+import {InputSwitchModule} from "primeng/inputswitch";
+import { SmartGalleriaComponent } from './smart-galleria/smart-galleria.component';
+import {ContextMenuModule} from "primeng/contextmenu";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SmartGalleriaComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,11 @@ import {TableModule} from "primeng/table";
     MessagesModule,
     ToastModule,
     TabViewModule,
-    TableModule
+    TableModule,
+    MenuModule,
+    InputSwitchModule,
+    ContextMenuModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
